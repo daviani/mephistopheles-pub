@@ -19,7 +19,7 @@ const HeaderBand = () => {
           </div>
         </div>
       </div>
-      <div className="w-full m-0 p-0 bg-cover bg-bottom customBackground "
+      <div className="w-full m-0 p-0 bg-cover bg-bottom headerBackground "
            style={{
 
            }}>
