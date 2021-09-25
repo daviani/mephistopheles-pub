@@ -2,6 +2,7 @@ import Layout from '../../components/main_layout'
 import i18n from '../../lib/i18n'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import TopComponent from '../../components/main_top_component'
 
 export default function Event () {
   const { locale } = useRouter().locale
@@ -14,8 +15,10 @@ export default function Event () {
       <link rel='icon'
             href='/favicon.ico'
       />
-    </Head> Event
-
+    </Head>
+      <TopComponent>
+        Events
+      </TopComponent>
 
     </Layout>
   )

@@ -2,12 +2,60 @@ import Layout from '../components/main_layout'
 import i18n from '../lib/i18n'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import TopComponent from '../components/main_top_component'
-import ContactForm from '../components/contact_form'
-import About from '../components/home_about'
 
-export default function Home () {
+import {responsiveImageFragment } from "../lib/fragments";
+import { request } from "../lib/datocms";
+import { useQuerySubscription } from 'react-datocms'
+
+import TopComponent from '../components/main_top_component'
+import About from '../components/home_about'
+import MiddleComponent from '../components/main_middle_component'
+import CardsCocktail from '../components/home_cards'
+
+
+export async function getStaticProps ({ preview, locale }) {
+
+  const formattedLocale = locale.split('-')[0]
+
+  const graphqlRequest = {
+    query: `
+{
+  allCocktails(locale: ${formattedLocale}) {
+    id
+    illustration {
+       responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+            ...responsiveImageFragment
+       }
+    }
+    title
+    describe
+      }
+    }
+    ${responsiveImageFragment}
+    `,
+    preview,
+  }
+  return {
+    props: {
+      subscription: preview
+        ? {
+          ...graphqlRequest,
+          initialData: await request(graphqlRequest),
+          token: process.env.NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN,
+          environment: process.env.NEXT_DATOCMS_ENVIRONMENT || null,
+        }
+        : {
+          enabled: false,
+          initialData: await request(graphqlRequest),
+        },
+    },
+  };
+}
+
+export default function Home ({subscription}) {
+  const {data: {allCocktails}} = useQuerySubscription(subscription);
   const { locale } = useRouter().locale
+
   return (
     <Layout> <Head>
       <title>{i18n.main.address[locale]}</title>
@@ -22,7 +70,17 @@ export default function Home () {
         <About />
       </TopComponent>
 
+      <MiddleComponent>
+        {allCocktails.length > 0 && <CardsCocktail allCocktails={allCocktails}  />}
+      </MiddleComponent>
 
+      <MiddleComponent>
+        Link_to_Menu
+      </MiddleComponent>
+
+      <MiddleComponent>
+        Map
+      </MiddleComponent>
     </Layout>
   )
 }
