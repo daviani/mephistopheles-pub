@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 module.exports = {
   webpack5: true,
   webpack: (config) => {
@@ -16,5 +18,13 @@ module.exports = {
       ],
     })
     return config
+  },
+  i18n: {
+    locales: ['fr', 'en'],
+    defaultLocale: 'fr'
+  },
+  env: {
+    NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN:
+    process.env.NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN,
   },
 }

@@ -14,3 +14,10 @@ a {
 * {
     box-sizing: border-box;
 }
+
+.customBackground {
+    background-image: url('../public/images/header/Header-background.png');
+    background-position: center;
+    height: 60vh;
+    max-height: 460px;
+}
