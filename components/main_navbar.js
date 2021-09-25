@@ -19,23 +19,23 @@ const NavBar = () => {
   const navBarItems = [
     {
       id  : 1,
-      name:  i18n.navigation.itemOne[locale] ,
+      name:  i18n.navigation.item_1[locale] ,
       href: '/',
     }, {
       id  : 2,
-      name:  i18n.navigation.itemTwo[locale],
+      name:  i18n.navigation.item_2[locale],
       href: '/carte',
     }, {
       id  : 3,
-      name:  i18n.navigation.itemThree[locale],
+      name:  i18n.navigation.item_3[locale],
       href: '/media',
     }, {
       id  : 4,
-      name: i18n.navigation.itemFour[locale],
+      name: i18n.navigation.item_4[locale],
       href: '/event',
     }, {
       id  : 5,
-      name: i18n.navigation.itemFive[locale],
+      name: i18n.navigation.item_5[locale],
       href: '/contact',
     }]
 

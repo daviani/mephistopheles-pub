@@ -12,7 +12,7 @@ const HeaderBand = () => {
         <div className='flex justify-between mx-4'>
           <div />
           <div className='mt-2 ml-3 text-center uppercase'>
-            {i18n.main.address[locale]}{' | '}{i18n.main.hourlyOne[locale]}{' - '}{i18n.main.hourlyTwo[locale]}
+            {i18n.main.address[locale]}{' | '}{i18n.main.hourly_1[locale]}{' - '}{i18n.main.hourly_2[locale]}
           </div>
           <div>
             <SwitchLanguage />
@@ -29,7 +29,7 @@ const HeaderBand = () => {
             {i18n.main.title[locale]}
           </h1>
           <h2 className="text-xl md:text-2xl text-white uppercase">
-            {i18n.main.subTitle[locale]}
+            {i18n.main.sub_title[locale]}
             </h2>
         </div>
       </div>

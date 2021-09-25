@@ -17,7 +17,7 @@ const Footer = () => {
       >
         <div className='w-1/2 text-center'>
           <p className='text-base mt-12 mb-6 uppercase text-sm sm:text-xs'>
-            {i18n.main.subTitle[locale]}
+            {i18n.main.sub_title[locale]}
           </p>
           <p className='mt-2 text-yellow-500 text-2xl sm:text-5xl mb-8'>
             {i18n.main.title[locale]}
@@ -27,8 +27,8 @@ const Footer = () => {
           <p>  {i18n.main.address[locale]} </p>
           <p>  {i18n.main.zipcode[locale]}{' '} {i18n.main.city[locale]}</p>
           <br />
-          <p> {i18n.main.hourlyOne[locale]}</p>
-          <p> {i18n.main.hourlyTwo[locale]}</p>
+          <p> {i18n.main.hourly_1[locale]}</p>
+          <p> {i18n.main.hourly_2[locale]}</p>
           <br />
           <div className='hover:text-yellow-500 cursor-pointer'>
             <Link href={telto}>
@@ -36,7 +36,7 @@ const Footer = () => {
             </Link>
           </div>
           <br />
-          <p>{i18n.main.textOne[locale]}</p>
+          <p>{i18n.main.text_1[locale]}</p>
           <div className='hover:text-yellow-500 cursor-pointer'>
             <Link href={mailto}
             >
