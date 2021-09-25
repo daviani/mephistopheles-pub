@@ -25,3 +25,7 @@ a {
 .bodyBackground {
     background-image: url('../public/images/main/mainBackground.png');
 }
+
+.cardBackground {
+    background-image: url('../public/images/homePage/cardBackground.jpg');
+}

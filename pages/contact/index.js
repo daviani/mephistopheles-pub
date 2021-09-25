@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import i18n from '../../lib/i18n'
 import Layout from '../../components/main_layout'
 import ContactForm from '../../components/contact_form'
-import TopComponent from '../../components/main_top_component'
+import TopComponent from '../../components/main_top-component'
 
 export default function Contact () {
   const { locale } = useRouter().locale

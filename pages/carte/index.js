@@ -2,7 +2,7 @@ import Layout from '../../components/main_layout'
 import i18n from '../../lib/i18n'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import TopComponent from '../../components/main_top_component'
+import TopComponent from '../../components/main_top-component'
 import About from '../../components/home_about'
 
 export default function Carte () {

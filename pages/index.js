@@ -7,10 +7,11 @@ import {responsiveImageFragment } from "../lib/fragments";
 import { request } from "../lib/datocms";
 import { useQuerySubscription } from 'react-datocms'
 
-import TopComponent from '../components/main_top_component'
+import TopComponent from '../components/main_top-component'
 import About from '../components/home_about'
-import MiddleComponent from '../components/main_middle_component'
-import CardsCocktail from '../components/home_cards'
+import MiddleComponent from '../components/main_middle-component'
+import CardsCocktail from '../components/home_cocktails-cards'
+import CartesCard from '../components/home_cartes-card'
 
 
 export async function getStaticProps ({ preview, locale }) {
@@ -75,7 +76,7 @@ export default function Home ({subscription}) {
       </MiddleComponent>
 
       <MiddleComponent>
-        Link_to_Menu
+        <CartesCard />
       </MiddleComponent>
 
       <MiddleComponent>
