@@ -2,6 +2,9 @@ import Layout from '../components/main_layout'
 import i18n from '../lib/i18n'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import TopComponent from '../components/main_top_component'
+import ContactForm from '../components/contact_form'
+import About from '../components/home_about'
 
 export default function Home () {
   const { locale } = useRouter().locale
@@ -14,7 +17,10 @@ export default function Home () {
       <link rel='icon'
             href='/favicon.ico'
       />
-    </Head> Home
+    </Head>
+      <TopComponent>
+        <About />
+      </TopComponent>
 
 
     </Layout>
