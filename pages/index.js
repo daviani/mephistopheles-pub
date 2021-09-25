@@ -12,6 +12,7 @@ import About from '../components/home_about'
 import MiddleComponent from '../components/main_middle-component'
 import CardsCocktail from '../components/home_cocktails-cards'
 import CartesCard from '../components/home_cartes-card'
+import Map from '../components/home_import-map'
 
 
 export async function getStaticProps ({ preview, locale }) {
@@ -80,7 +81,7 @@ export default function Home ({subscription}) {
       </MiddleComponent>
 
       <MiddleComponent>
-        Map
+        <Map  />
       </MiddleComponent>
     </Layout>
   )
