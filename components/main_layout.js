@@ -1,5 +1,7 @@
 import Header from './main_header'
 import NavBar from './main_navbar'
+import Footer from './main_footer'
+import LegalNotice from './main_legal-notice'
 
 const Layout = ({ children }) => {
 
@@ -14,8 +16,12 @@ const Layout = ({ children }) => {
               {children}
             </main>
 
+            <Footer />
           </div>
         </div>
+        <footer>
+          <LegalNotice />
+        </footer>
 
       </div>
     </>
