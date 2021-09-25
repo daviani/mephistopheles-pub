@@ -1,5 +1,3 @@
-import Link           from 'next/link'
-import useTranslation from 'next-translate/useTranslation'
 import i18n from '../lib/i18n'
 import { useRouter } from 'next/router'
 

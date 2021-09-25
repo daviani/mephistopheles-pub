@@ -1,9 +1,9 @@
-import Layout from '../components/main_layout'
-import i18n from '../lib/i18n'
+import Layout from '../../components/main_layout'
+import i18n from '../../lib/i18n'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-export default function Home () {
+export default function Carte () {
   const { locale } = useRouter().locale
   return (
     <Layout> <Head>
@@ -14,7 +14,7 @@ export default function Home () {
       <link rel='icon'
             href='/favicon.ico'
       />
-    </Head> Home
+    </Head> Carte
 
 
     </Layout>
