@@ -3,8 +3,8 @@ import i18n from '../lib/i18n'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import {responsiveImageFragment } from "../lib/fragments";
-import { request } from "../lib/datocms";
+import { responsiveImageFragment } from '../lib/fragments'
+import { request } from '../lib/datocms'
 import { useQuerySubscription } from 'react-datocms'
 
 import TopComponent from '../components/main_top-component'
@@ -13,7 +13,6 @@ import MiddleComponent from '../components/main_middle-component'
 import CardsCocktail from '../components/home_cocktails-cards'
 import CartesCard from '../components/home_cartes-card'
 import Map from '../components/home_import-map'
-
 
 export async function getStaticProps ({ preview, locale }) {
 
@@ -51,13 +50,13 @@ export async function getStaticProps ({ preview, locale }) {
           initialData: await request(graphqlRequest),
         },
     },
-  };
+  }
 }
 
-export default function Home ({subscription}) {
-  const {data: {allCocktails}} = useQuerySubscription(subscription);
+export default function Home ({ subscription }) {
   const { locale } = useRouter().locale
-
+  const { data: { allCocktails } } = useQuerySubscription(subscription)
+console.log(allCocktails)
   return (
     <Layout> <Head>
       <title>{i18n.main.address[locale]}</title>
@@ -72,16 +71,19 @@ export default function Home ({subscription}) {
         <About />
       </TopComponent>
 
-      <MiddleComponent>
-        {allCocktails.length > 0 && <CardsCocktail allCocktails={allCocktails}  />}
-      </MiddleComponent>
+
+      {allCocktails.length > 0 && (
+        <MiddleComponent>
+          <CardsCocktail allCocktails={allCocktails}  />
+        </MiddleComponent>
+        )}
 
       <MiddleComponent>
         <CartesCard />
       </MiddleComponent>
 
       <MiddleComponent>
-        <Map  />
+        <Map />
       </MiddleComponent>
     </Layout>
   )
