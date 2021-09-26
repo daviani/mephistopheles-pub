@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import TopComponent from '../../components/main_top-component'
 import MiddleComponent from '../../components/main_middle-component'
 import Carousel from '../../components/media_carousel-main'
+import Gallery from '../../components/media_gallery'
 
 export default function Media () {
   const { locale } = useRouter().locale
@@ -26,7 +27,7 @@ export default function Media () {
       </TopComponent>
 
       <MiddleComponent>
-        Images
+        <Gallery />
       </MiddleComponent>
 
       <MiddleComponent>

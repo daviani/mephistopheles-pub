@@ -4,22 +4,22 @@ import CarouselButtons from './media_carousel-buttons'
 const carouselItems = [
   {
     id: '1',
-    img: '/images/mediaPage/carousel_img_1.jpg',
+    img: '/images/media/carousel/img_1.jpg',
     text: 'Slide 1'
   },
   {
     id: '2',
-    img: '/images/mediaPage/carousel_img_2.jpg',
+    img: '/images/media/carousel/img_2.jpg',
     text: 'Slide 2'
   },
   {
     id: '3',
-    img: '/images/mediaPage/carousel_img_3.jpg',
+    img: '/images/media/carousel/img_3.jpg',
     text: 'Slide 3'
   },
   {
     id: '4',
-    img: '/images/mediaPage/carousel_img_4.jpg',
+    img: '/images/media/carousel/img_4.jpg',
     text: 'Slide 4'
   }
 ]
