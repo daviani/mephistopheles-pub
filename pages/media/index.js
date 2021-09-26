@@ -4,9 +4,12 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import TopComponent from '../../components/main_top-component'
 import MiddleComponent from '../../components/main_middle-component'
+import Carousel from '../../components/media_carousel-main'
 
 export default function Media () {
   const { locale } = useRouter().locale
+
+
   return (
     <Layout> <Head>
       <title>{i18n.main.address[locale]}</title>
@@ -19,7 +22,7 @@ export default function Media () {
     </Head>
 
       <TopComponent>
-        carousel
+        <Carousel />
       </TopComponent>
 
       <MiddleComponent>
