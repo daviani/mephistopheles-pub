@@ -2,10 +2,63 @@ import Layout from '../../components/main_layout'
 import i18n from '../../lib/i18n'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import EventsContainer from '../../components/event_main'
+import { responsiveImageFragment } from '../../lib/fragments'
+import { request } from '../../lib/datocms'
+import { useQuerySubscription } from 'react-datocms'
 import TopComponent from '../../components/main_top-component'
+import About from '../../components/home_about'
+import MiddleComponent from '../../components/main_middle-component'
+import CardsCocktail from '../../components/home_cocktails-cards'
+import CartesCard from '../../components/home_cartes-card'
+import Map from '../../components/home_import-map'
 
-export default function Event () {
+export async function getStaticProps ({ preview, locale }) {
+
+  const formattedLocale = locale.split('-')[0]
+
+  const graphqlRequest = {
+    query: `{
+      allEvents(locale: ${formattedLocale}) {
+        id
+        illustration {
+          responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+            ...responsiveImageFragment
+          }
+        }
+        title 
+        description
+        subDescription
+        frequency
+        day
+        frequencyHour
+        hour
+      }
+    }
+    ${responsiveImageFragment}
+    `,
+    preview,
+  }
+  return {
+    props: {
+      subscription: preview
+        ? {
+          ...graphqlRequest,
+          initialData: await request(graphqlRequest),
+          token: process.env.NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN,
+          environment: process.env.NEXT_DATOCMS_ENVIRONMENT || null,
+        }
+        : {
+          enabled: false,
+          initialData: await request(graphqlRequest),
+        },
+    },
+  }
+}
+
+export default function Event ({ subscription }) {
   const { locale } = useRouter().locale
+  const { data: { allEvents } } = useQuerySubscription(subscription)
   return (
     <Layout> <Head>
       <title>{i18n.main.address[locale]}</title>
@@ -16,9 +69,7 @@ export default function Event () {
             href='/favicon.ico'
       />
     </Head>
-      <TopComponent>
-        Events
-      </TopComponent>
+      <EventsContainer allEvents={allEvents} />
 
     </Layout>
   )

@@ -3,10 +3,6 @@ import Link from 'next/link'
 
 const Articles = ({ allArticles }) => {
 
-  const put = allArticles[0]
-  console.log(typeof allArticles)
-  console.log(typeof put)
-
   return (
     <>
       {allArticles.map(article => (
@@ -39,7 +35,7 @@ const Articles = ({ allArticles }) => {
                   href={article.urlToArticles}
                   passHref
                 >
-                  <p className='text-yellow-500 hover:text-yellow-600 hover:underline '>
+                  <p className='text-yellow-500 hover:text-yellow-600 hover:underline cursor-pointer'>
                     {article.textToLink}
                   </p>
                 </Link>
