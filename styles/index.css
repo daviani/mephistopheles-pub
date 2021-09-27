@@ -23,6 +23,7 @@ a {
 }
 
 .bodyBackground {
+    background-attachment: fixed;
     background-image: url('../public/images/main/mainBackground.png');
 }
 

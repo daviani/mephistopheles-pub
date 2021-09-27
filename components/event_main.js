@@ -6,7 +6,6 @@ import EventDetail from './event_details'
 const EventsContainers = ({ allEvents }) => {
   const firstEvent = allEvents[0]
   const otherEvents = allEvents.slice(1)
-  console.log(allEvents)
   return (
     <>
 
@@ -22,7 +21,6 @@ const EventsContainers = ({ allEvents }) => {
         />
       </TopComponent>
 
-
       {otherEvents.map((even) => (
         <MiddleComponent key={even.id}>
           <EventDetail illustration={even.illustration}
@@ -35,8 +33,8 @@ const EventsContainers = ({ allEvents }) => {
                        hour={even.hour}
           />
         </MiddleComponent>
-      ))}
-
+      ))
+      }
     </>
   )
 }

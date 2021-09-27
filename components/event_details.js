@@ -17,10 +17,10 @@ const EventDetail = ({
         <div
           className='flex flex-row justify-around p-4 font-bold leading-none text-white uppercase bg-yellow-500 md:flex-col md:items-center md:justify-center md:w-1/4'
         >
-          <div className='md:text-3xl'>{frequency}</div>
-          <div className='md:text-6xl'>{day}</div>
-          <div className='md:text-xl'>{frequencyHour}</div>
-          <div className='md:text-xl'>{hour}</div>
+          <p className='md:text-2xl'>{frequency}</p>
+          <p className='md:text-5xl'>{day}</p>
+          <p className='md:text-xl'>{frequencyHour}</p>
+          <p className='md:text-5xl'>{hour}</p>
         </div>
         <div className='p-4 font-normal text-gray-800 md:w-3/4'>
           <h5 className='mb-4 text-4xl font-bold leading-none tracking-tight text-center text-gray-800'>

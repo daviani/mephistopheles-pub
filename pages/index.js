@@ -29,7 +29,6 @@ export async function getStaticProps ({ preview, locale }) {
         }
         title
         describe
-        date
       }
     }
     ${responsiveImageFragment}
@@ -56,7 +55,6 @@ export async function getStaticProps ({ preview, locale }) {
 export default function Home ({ subscription }) {
   const { locale } = useRouter().locale
   const { data: { allCocktails } } = useQuerySubscription(subscription)
-  console.log(allCocktails)
   return (
     <Layout>
       <Head>

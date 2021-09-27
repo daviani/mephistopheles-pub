@@ -14,9 +14,7 @@ import CartesCard from '../../components/home_cartes-card'
 import Map from '../../components/home_import-map'
 
 export async function getStaticProps ({ preview, locale }) {
-
   const formattedLocale = locale.split('-')[0]
-
   const graphqlRequest = {
     query: `{
       allEvents(locale: ${formattedLocale}) {
@@ -26,7 +24,7 @@ export async function getStaticProps ({ preview, locale }) {
             ...responsiveImageFragment
           }
         }
-        title 
+        title
         description
         subDescription
         frequency
@@ -59,6 +57,9 @@ export async function getStaticProps ({ preview, locale }) {
 export default function Event ({ subscription }) {
   const { locale } = useRouter().locale
   const { data: { allEvents } } = useQuerySubscription(subscription)
+
+  console.log('event :::',subscription)
+
   return (
     <Layout> <Head>
       <title>{i18n.main.address[locale]}</title>
@@ -69,7 +70,10 @@ export default function Event ({ subscription }) {
             href='/favicon.ico'
       />
     </Head>
-      <EventsContainer allEvents={allEvents} />
+
+      {allEvents.length > 0 && (
+        <EventsContainer allEvents={allEvents} />
+      )  }
 
     </Layout>
   )
