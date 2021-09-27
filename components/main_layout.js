@@ -4,7 +4,6 @@ import Footer from './main_footer'
 import LegalNotice from './main_legal-notice'
 
 const Layout = ({ children }) => {
-
   return (
     <>
       <div className='leading-normal tracking-normal bodyBackground'>
@@ -27,5 +26,4 @@ const Layout = ({ children }) => {
     </>
   )
 }
-
 export default Layout

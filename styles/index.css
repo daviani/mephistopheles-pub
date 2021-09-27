@@ -104,3 +104,22 @@ a {
         display: none;
     }
 }
+
+.pdf__container {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pdf__document {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pdf__page > canvas {
+    max-width: 100%;
+    height: auto !important;
+}

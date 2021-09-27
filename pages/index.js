@@ -3,10 +3,6 @@ import i18n from '../lib/i18n'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import { responsiveImageFragment } from '../lib/fragments'
-import { request } from '../lib/datocms'
-import { useQuerySubscription } from 'react-datocms'
-
 import TopComponent from '../components/main_top-component'
 import About from '../components/home_about'
 import MiddleComponent from '../components/main_middle-component'
@@ -14,10 +10,12 @@ import CardsCocktail from '../components/home_cocktails-cards'
 import CartesCard from '../components/home_cartes-card'
 import Map from '../components/home_import-map'
 
+import { responsiveImageFragment } from '../lib/fragments'
+import { request } from '../lib/datocms'
+import { useQuerySubscription } from 'react-datocms'
+
 export async function getStaticProps ({ preview, locale }) {
-
   const formattedLocale = locale.split('-')[0]
-
   const graphqlRequest = {
     query: `{
       allCocktails(locale: ${formattedLocale}) {
@@ -53,8 +51,8 @@ export async function getStaticProps ({ preview, locale }) {
 }
 
 export default function Home ({ subscription }) {
-  const { locale } = useRouter().locale
   const { data: { allCocktails } } = useQuerySubscription(subscription)
+  const { locale } = useRouter().locale
   return (
     <Layout>
       <Head>

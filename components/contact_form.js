@@ -93,7 +93,7 @@ const ContactForm = () => {
 
 
       {formSubmitted.sendingState === 'before' &&
-      <div className='h-96 m-4'>
+      <div className='h-auto m-4'>
         {!showCaptcha ? (
           <form onSubmit={submitFormAndShowCaptcha}
                 className=' w-full p-4'
@@ -101,7 +101,7 @@ const ContactForm = () => {
             <div className='flex flex-wrap -mx-3 mb-6'>
               <div className='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
                 <label className='block tracking-wide  text-xs font-bold mb-2'>
-                  {i18n.contact.form_name[locale]} {':'}
+                  {i18n.contact.form_name[locale]}
                 </label> <input
                 className='appearance-none block w-full bg-gray-100 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'
                 onChange={(e) => dispatch({ type: 'name', value: e.target.value })}
@@ -112,7 +112,7 @@ const ContactForm = () => {
               </div>
               <div className='w-full md:w-1/2 px-3 mb-6 md:mb-0'>
                 <label className='block tracking-wide  text-xs font-bold mb-2'>
-                  {i18n.contact.form_email[locale]}{':'}
+                  {i18n.contact.form_email[locale]}
                 </label> <input
                 className='appearance-none block w-full bg-gray-100 border border-gray-300 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'
                 onChange={(e) => dispatch({ type: 'email', value: e.target.value })}
@@ -126,16 +126,20 @@ const ContactForm = () => {
               <label className='block tracking-wide text-xs font-bold mb-2'
                      htmlFor='grid-password'
               >
-                {i18n.contact.form_message[locale]}{':'}
-              </label> <textarea
-              className='block w-full bg-gray-100 text-gray-700 border border-gray-300 rounded-l py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
-              type='text'
-              rows='6'
-              value={message}
-              onChange={(e) => dispatch({ type: 'message', value: e.target.value })}
-              required
-            />
+                {i18n.contact.form_message[locale]}
+              </label>
+              <textarea
+                className='block w-full bg-gray-100 text-gray-700 border border-gray-300 rounded-l py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
+                rows='6'
+                value={message}
+                onChange={(e) => dispatch({ type: 'message', value: e.target.value })}
+                required
+              />
             </div>
+
+            <p className='text-xs'>
+              {i18n.contact.rgpd[locale]}
+            </p>
 
             {showFormErrors ? (
               <p className='sm:mr-4 text-center text-red-400 m-3'>

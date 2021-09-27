@@ -19,13 +19,10 @@ const HeaderBand = () => {
           </div>
         </div>
       </div>
-      <div className="w-full m-0 p-0 bg-cover bg-bottom headerBackground "
-           style={{
-
-           }}>
+      <div className="w-full m-0 p-0 bg-cover bg-bottom headerBackground ">
         <div
           className="container max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal">
-          <h1 className="text-white font-extrabold text-3xl mb-8 md:text-5xl font-Bastille">
+          <h1 className="mt-20 md:mt-0 sm text-white font-extrabold mb-8 text-5xl font-Bastille">
             {i18n.main.title[locale]}
           </h1>
           <h2 className="text-xl md:text-2xl text-white uppercase">
