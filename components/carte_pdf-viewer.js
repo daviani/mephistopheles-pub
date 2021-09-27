@@ -18,6 +18,8 @@ export default function PDFViewer ({ allMenus }) {
     setNumPages(nextNumPages)
   }
 
+  console.log(allMenus[0].pdfFile.url)
+
   return (
     <>
       <h3 className='text-center text-yellow-500 text-5xl m-8 font-Bastille '>
