@@ -112,7 +112,7 @@ const NavBar = () => {
               <div
                 className='lg:inline-block lg:mt-0 text-yellow-500 hover:text-yellow-600 m-1 p-1 cursor-pointer'
               >
-                <Link href='https://m.facebook.com/Mephistophelespub/' passHref
+                <Link href='https://m.facebook.com/Mephistophelespub/' rel="noreferrer" passHref
                       className='lg:inline-block lg:mt-0 hover:text-yellow-50 text-yellow-500 hover:bg-yellow-500 m-1 p-1 cursor-pointer'
                 >
                   <FontAwesomeIcon icon={faFacebookSquare} size='2x' />
@@ -121,7 +121,7 @@ const NavBar = () => {
               <div
                 className='lg:inline-block lg:mt-0 text-yellow-500 hover:text-yellow-600 m-1 p-1 cursor-pointer'
               >
-                <Link href='https://www.instagram.com/mephistophelespub/' passHref>
+                <Link href='https://www.instagram.com/mephistophelespub/'rel="noreferrer"  passHref>
                   <FontAwesomeIcon icon={faInstagramSquare} size='2x' />
                 </Link>
               </div>
