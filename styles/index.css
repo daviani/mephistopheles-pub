@@ -16,7 +16,7 @@ a {
 }
 
 .headerBackground {
-    background-image: url('../public/images/header/Header-background.png');
+    background-image: url('../public/images/header/Header-background.webp');
     background-position: center;
     height: 60vh;
     max-height: 460px;
@@ -24,11 +24,11 @@ a {
 
 .bodyBackground {
     background-attachment: fixed;
-    background-image: url('../public/images/main/mainBackground.jpg');
+    background-image: url('../public/images/main/mainBackground.webp');
 }
 
 .cardBackground {
-    background-image: url('../public/images/home/cardBackground.jpg');
+    background-image: url('../public/images/home/cardBackground.webp');
 }
 
 
