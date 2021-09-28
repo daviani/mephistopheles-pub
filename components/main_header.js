@@ -1,7 +1,6 @@
 import i18n from '../lib/i18n'
 import { useRouter } from 'next/router'
 import SwitchLanguage from './main_switch-language'
-import headerBackground from '../public/images/header/Header-background.png'
 
 const HeaderBand = () => {
   const { locale } = useRouter()
