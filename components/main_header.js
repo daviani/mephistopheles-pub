@@ -1,6 +1,7 @@
 import i18n from '../lib/i18n'
 import { useRouter } from 'next/router'
 import SwitchLanguage from './main_switch-language'
+import Link from 'next/link'
 
 const HeaderBand = () => {
   const { locale } = useRouter()
@@ -18,15 +19,20 @@ const HeaderBand = () => {
           </div>
         </div>
       </div>
-      <div className="w-full m-0 p-0 bg-cover bg-bottom headerBackground ">
+      <div className='w-full m-0 p-0 bg-cover bg-bottom headerBackground '>
         <div
-          className="container max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal">
-          <h1 className="mt-20 md:mt-0 sm text-white font-extrabold mb-8 text-5xl font-Bastille">
-            {i18n.main.title[locale]}
+          className='container max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal'
+        >
+          <h1 className='mt-20 md:mt-0 sm text-white font-extrabold mb-8 text-5xl font-Bastille'>
+            <Link href='/'
+                  passHref
+            >
+              {i18n.main.title[locale]}
+            </Link>
           </h1>
-          <h2 className="text-xl md:text-2xl text-white uppercase">
+          <h2 className='text-xl md:text-2xl text-white uppercase'>
             {i18n.main.sub_title[locale]}
-            </h2>
+          </h2>
         </div>
       </div>
     </>

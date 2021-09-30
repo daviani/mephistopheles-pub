@@ -11,7 +11,7 @@ const CardsCocktail = ({ allCocktails }) => {
       </h3>
       <div className='grid grid-cols-1 sm:grid-cols-3'>
         {allCocktails.map((cocktail) => (
-          <div key={cocktail.id} className='flex flex-col shadow rounded-xl bg-grey-50 m-3 hover:shadow-xl hover:bg-grey-200'>
+          <div key={cocktail.id} className='flex flex-col shadow rounded-xl bg-grey-300 m-3 hover:shadow-xl hover:bg-grey-200'>
             <div className='relative'>
               <Image
                 data={cocktail.illustration.responsiveImage}

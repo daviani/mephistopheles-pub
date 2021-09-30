@@ -6,12 +6,6 @@ import EventsContainer from '../../components/event_main'
 import { responsiveImageFragment } from '../../lib/fragments'
 import { request } from '../../lib/datocms'
 import { useQuerySubscription } from 'react-datocms'
-import TopComponent from '../../components/main_top-component'
-import About from '../../components/home_about'
-import MiddleComponent from '../../components/main_middle-component'
-import CardsCocktail from '../../components/home_cocktails-cards'
-import CartesCard from '../../components/home_cartes-card'
-import Map from '../../components/home_import-map'
 
 export async function getStaticProps ({ preview, locale }) {
   const formattedLocale = locale.split('-')[0]
@@ -57,8 +51,6 @@ export async function getStaticProps ({ preview, locale }) {
 export default function Event ({ subscription }) {
   const { locale } = useRouter().locale
   const { data: { allEvents } } = useQuerySubscription(subscription)
-
-  console.log('event :::',subscription)
 
   return (
     <Layout> <Head>
