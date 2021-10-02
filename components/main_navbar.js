@@ -8,6 +8,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { useRouter } from 'next/router'
 import i18n from '../lib/i18n'
+import SwitchLanguage from './main_switch-language'
 
 config.autoAddCss = false
 
@@ -20,32 +21,32 @@ const NavBar = () => {
     {
       id: 1,
       name: i18n.navigation.item_1[locale],
-      href: '/',
+      href:i18n.navigation.item_1_url[locale],
     }, {
       id: 2,
       name: i18n.navigation.item_2[locale],
-      href: '/carte',
+      href: i18n.navigation.item_2_url[locale],
     }, {
       id: 3,
       name: i18n.navigation.item_3[locale],
-      href: '/media',
+      href: i18n.navigation.item_3_url[locale],
     }, {
       id: 4,
       name: i18n.navigation.item_4[locale],
-      href: '/event',
+      href: i18n.navigation.item_4_url[locale],
     }, {
       id: 5,
       name: i18n.navigation.item_5[locale],
-      href: '/contact',
+      href: i18n.navigation.item_5_url[locale],
     }]
 
   return (
-    <div className='sticky  top-12 md:10 z-20'>
+    <div className='sticky top-8  md:top-9 sm:top-12 z-20'>
       <nav className='bg-white bg-opacity-90  '>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 customTop'>
           <div className='flex items-center justify-between h-16'>
             <div className='hidden md:block'>
-              <div className='ml-10 flex items-baseline space-x-4'>
+              <div className='flex items-baseline space-x-4'>
                 {navBarItems.map((item) => {
                     const activeItem = history.pathname
                     const listOfItem = item.href.toLowerCase()
@@ -124,6 +125,9 @@ const NavBar = () => {
                 <Link href='https://www.instagram.com/mephistophelespub/'rel="noreferrer"  passHref>
                   <FontAwesomeIcon icon={faInstagramSquare} size='2x' />
                 </Link>
+              </div>
+              <div className='lg:inline-block lg:mt-0 m-1 p-1 cursor-pointer '>
+                <SwitchLanguage />
               </div>
             </div>
           </div>

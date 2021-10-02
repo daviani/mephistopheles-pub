@@ -1,6 +1,6 @@
-import Image          from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter }  from 'next/router'
+import { useRouter } from 'next/router'
 import fr from '../public/images/main/flags/fr.png'
 import en from '../public/images/main/flags/en.png'
 
@@ -13,23 +13,21 @@ const SwitchLanguage = () => {
             locale={locale === 'fr' ? 'en' : 'fr'}
             title='switch to english or french'
       >
-        <div className='mt-5 sm:mt-2'>
-          {locale === 'fr' ? (
-            <Image src={en}
-                   alt='en'
-                   className='cursor-pointer'
-                   height={25}
-                   width={25}
-            />
-          ) : (
-            <Image src={fr}
-                   alt='fr'
-                   className='cursor-pointer'
-                   height={25}
-                   width={25}
-            />
-          )}
-        </div>
+        {locale === 'fr' ? (
+          <Image src={en}
+                 alt='en'
+                 className='cursor-pointer'
+                 height={33}
+                 width={33}
+          />
+        ) : (
+          <Image src={fr}
+                 alt='fr'
+                 className='cursor-pointer'
+                 height={33}
+                 width={33}
+          />
+        )}
       </Link>
     </>
   )

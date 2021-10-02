@@ -1,5 +1,4 @@
-import useTranslation from 'next-translate/useTranslation'
-import { useRouter } from 'next/router'
+ import { useRouter } from 'next/router'
 import i18n from '../lib/i18n'
 
 const CartesCard = () => {
