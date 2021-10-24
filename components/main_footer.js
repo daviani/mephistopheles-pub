@@ -19,7 +19,7 @@ const Footer = () => {
           <p className='text-base mt-12 mb-6 uppercase text-sm sm:text-xs'>
             {i18n.main.sub_title[locale]}
           </p>
-          <p className='mt-2 text-yellow-500 text-2xl sm:text-5xl mb-8 font-Bastille'>
+          <p className='mt-2 text-yellow-500 text-2xl sm:text-5xl mb-8 bastille'>
             {i18n.main.title[locale]}
           </p>
         </div>

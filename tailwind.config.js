@@ -9,9 +9,6 @@ module.exports = {
           600: '#786043'
         }
       },
-      fontFamily: {
-        Bastille: ['Bastille Vredeburg Demo']
-      }
     },
     minHeight: {
       '0': '0',

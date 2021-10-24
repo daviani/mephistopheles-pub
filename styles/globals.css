@@ -1,13 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@font-face {
-    font-family: "Bastille";
-    src: url("public/fonts/Bastille Vredeburg Demo.ttf") format("ttf");
-}
-
-body {
-    @apply font-custom;
-}

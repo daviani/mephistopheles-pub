@@ -6,7 +6,7 @@ const CardsCocktail = ({ allCocktails }) => {
   const { locale } = useRouter()
   return (
     <div className='bg-white my-8 p-6 '>
-      <h3 className='text-center text-yellow-500 text-5xl m-8 font-Bastille '>
+      <h3 className='text-center text-yellow-500 text-5xl m-8 bastille '>
         {i18n.home.cocktail_card_title[locale]}
       </h3>
       <div className='grid grid-cols-1 sm:grid-cols-3'>

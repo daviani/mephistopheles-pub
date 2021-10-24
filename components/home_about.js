@@ -5,7 +5,7 @@ const About = () => {
   const { locale } = useRouter()
   return (
     <div className="rounded overflow-hidden text-center p-5">
-      <h3 className="text-center text-yellow-500 text-5xl m-8 font-Bastille ">
+      <h3 className="text-center text-yellow-500 text-5xl m-8 bastille ">
         {i18n.home.about_title[locale]}
       </h3>
       <p className="mt-12 text-base">

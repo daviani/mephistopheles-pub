@@ -19,7 +19,7 @@ export default function PDFViewer ({ allMenus }) {
 
   return (
     <>
-      <h3 className='text-center text-yellow-500 text-5xl m-8 font-Bastille '>
+      <h3 className='text-center text-yellow-500 text-5xl m-8 bastille '>
         {i18n.cards.title[locale]}
       </h3>
       {allMenus.length >= 1 &&

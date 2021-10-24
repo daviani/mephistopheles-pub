@@ -87,10 +87,9 @@ const ContactForm = () => {
   }
   return (
     <>
-      <div className='text-center text-yellow-500 mt-4 mb-8 text-5xl pt-6 px-6 font-Bastille h-30'>
+      <div className='text-center text-yellow-500 mt-4 mb-8 text-5xl pt-6 px-6 bastille h-30'>
         {i18n.contact.title[locale]}
       </div>
-
 
       {formSubmitted.sendingState === 'before' &&
       <div className='h-auto m-4'>

@@ -18,6 +18,7 @@
     "classnames": "^2.3.1",
     "email-js": "^2.0.2",
     "next": "^11.1.2",
+    "next-fonts": "^1.5.1",
     "next-translate": "^1.1.0",
     "react": "^17.0.2",
     "react-datocms": "^1.6.3",
