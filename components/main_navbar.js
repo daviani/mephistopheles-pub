@@ -1,27 +1,20 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Link from 'next/link'
-import { Transition } from '@headlessui/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookSquare } from '@fortawesome/free-brands-svg-icons'
-import { faInstagramSquare } from '@fortawesome/free-brands-svg-icons/faInstagramSquare'
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import { useRouter } from 'next/router'
+import {Transition} from '@headlessui/react'
+import {useRouter} from 'next/router'
 import i18n from '../lib/i18n'
 import SwitchLanguage from './main_switch-language'
-
-config.autoAddCss = false
+import {RiInstagramFill, RiFacebookCircleFill} from "react-icons/ri"
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { locale } = useRouter()
+  const {locale} = useRouter()
   let history = useRouter()
-
   const navBarItems = [
     {
       id: 1,
       name: i18n.navigation.item_1[locale],
-      href:i18n.navigation.item_1_url[locale],
+      href: i18n.navigation.item_1_url[locale],
     }, {
       id: 2,
       name: i18n.navigation.item_2[locale],
@@ -108,26 +101,18 @@ const NavBar = () => {
                 )}
               </button>
             </div>
-
             <div className='flex flex-row'>
-              <div
-                className='lg:inline-block lg:mt-0 text-yellow-500 hover:text-yellow-600 m-1 p-1 cursor-pointer'
-              >
-                <Link href='https://m.facebook.com/Mephistophelespub/' rel="noreferrer" passHref
-                      className='lg:inline-block lg:mt-0 hover:text-yellow-50 text-yellow-500 hover:bg-yellow-500 m-1 p-1 cursor-pointer'
-                >
-                  <FontAwesomeIcon icon={faFacebookSquare} size='2x' />
-                </Link>
-              </div>
-              <div
-                className='lg:inline-block lg:mt-0 text-yellow-500 hover:text-yellow-600 m-1 p-1 cursor-pointer'
-              >
-                <Link href='https://www.instagram.com/mephistophelespub/'rel="noreferrer"  passHref>
-                  <FontAwesomeIcon icon={faInstagramSquare} size='2x' />
-                </Link>
-              </div>
-              <div className='lg:inline-block lg:mt-0 m-1 p-1 cursor-pointer '>
-                <SwitchLanguage />
+              <RiFacebookCircleFill
+                className='lg:inline-block lg:mt-0 text-yellow-500 hover:text-yellow-600 ml-2 p-2 text-5xl cursor-pointer'>
+                <Link href='https://m.facebook.com/Mephistophelespub/' passHref/>
+              </RiFacebookCircleFill>
+              <RiInstagramFill
+                className='lg:inline-block lg:mt-0 text-yellow-500 hover:text-yellow-600 p-2 text-5xl cursor-pointer'>
+                <Link href='https://www.instagram.com/mephistophelespub/' passHref/>
+              </RiInstagramFill>
+
+              <div className='lg:inline-block lg:mt-0 m-1 p-1 cursor-pointer'>
+                <SwitchLanguage/>
               </div>
             </div>
           </div>
