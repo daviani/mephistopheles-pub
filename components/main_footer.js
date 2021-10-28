@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import {useRouter} from 'next/router'
 import i18n from '../lib/i18n'
 
 const Footer = () => {
-  const { locale } = useRouter()
+  const {locale} = useRouter()
 
   const mail = i18n.main.mail[locale]
   const mailto = 'mailto:' + mail
@@ -16,11 +16,11 @@ const Footer = () => {
         className='flex h-full bg-white bg-opacity-90 rounded-t-lg overflow-hidden mt-8'
       >
         <div className='w-1/2 text-center'>
-          <p className='text-base mt-12 mb-6 uppercase text-sm sm:text-xs'>
+          <p className='text-base mt-12 mb-6 uppercase text-sm  break-words'>
             {i18n.main.sub_title[locale]}
           </p>
-          <p className='mt-2 text-yellow-500 text-2xl sm:text-5xl mb-8 bastille'>
-            {i18n.main.title[locale]}
+          <p className='mt-2 text-yellow-500 text-5xl mb-8 bastille break-words'>
+            Mephistopheles Pub
           </p>
         </div>
         <div className='w-1/2 p-4'>
@@ -32,7 +32,9 @@ const Footer = () => {
           <br />
           <div className='hover:text-yellow-500 cursor-pointer'>
             <Link href={telto}>
-              {tel}
+              <p className="break-words">
+                {tel}
+              </p>
             </Link>
           </div>
           <br />
@@ -40,7 +42,9 @@ const Footer = () => {
           <div className='hover:text-yellow-500 cursor-pointer'>
             <Link href={mailto}
             >
-              {mail}
+              <p className="break-words">
+                {mail}
+              </p>
             </Link>
           </div>
         </div>
