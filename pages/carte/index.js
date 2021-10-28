@@ -3,21 +3,22 @@ import i18n from '../../lib/i18n'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import TopComponent from '../../components/main_top-component'
-import dynamic from "next/dynamic";
-import { responsiveImageFragment } from '../../lib/fragments'
+import dynamic from "next/dynamic"
 import { request } from '../../lib/datocms'
 import { useQuerySubscription } from 'react-datocms'
 
-export async function getStaticProps ({ preview, locale }) {
+export async function getStaticProps ({ preview, locale}) {
+  const formattedLocale = locale.split('-')[0]
   const graphqlRequest = {
     query: `{
-      allMenus {
-        pdfFile {
-          url(imgixParams: {})
+        allCartes(locale: ${formattedLocale}, orderBy: _createdAt_ASC) {
+            id
+            titre
+            fichierPdf {
+                url
+            }
         }
-      }
-    }
-    `,
+    }`,
     preview,
   }
   return {
@@ -42,7 +43,7 @@ const PDFViewer = dynamic(() => import("../../components/carte_pdf-viewer"), {
 })
 
 export default function Carte ({subscription}) {
-  const { data: { allMenus } } = useQuerySubscription(subscription)
+  const { data: { allCartes } } = useQuerySubscription(subscription)
   const { locale } = useRouter().locale
 
   return (
@@ -57,7 +58,7 @@ export default function Carte ({subscription}) {
       />
     </Head>
       <TopComponent>
-        <PDFViewer allMenus={allMenus} />
+        <PDFViewer allCartes={allCartes} />
       </TopComponent>
     </Layout>
   )
