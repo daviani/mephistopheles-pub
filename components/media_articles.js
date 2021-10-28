@@ -6,8 +6,8 @@ const Articles = ({ allArticles }) => {
   return (
     <>
       {allArticles.map(article => (
-          <MiddleComponent>
-            <div key={article.id}
+          <MiddleComponent  key={article.id}>
+            <div
                  className='px-10 py-6 rounded-lg bg-white w-full mx-auto'
             >
               <div className='flex justify-between items-center'>
