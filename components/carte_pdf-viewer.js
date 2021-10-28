@@ -14,8 +14,6 @@ export default function PDFViewer({allCartes}) {
   function onDocumentLoadSuccess({numPages: nextNumPages}) {
     setNumPages(nextNumPages)
   }
-
-  console.log('1',  allCartes)
   return (
     <>
       {allCartes &&
