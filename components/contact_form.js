@@ -1,11 +1,10 @@
 import { useState, useReducer } from 'react'
 import emailjs from 'emailjs-com'
 import ReCAPTCHA from 'react-google-recaptcha'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheckCircle } from '@fortawesome/free-solid-svg-icons/faCheckCircle'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import i18n from '../lib/i18n'
+import {FaCheckCircle} from 'react-icons/fa'
 import Loading from './main_loading'
 
 const initialState = {
@@ -190,9 +189,7 @@ const ContactForm = () => {
         <div
           className='text-green-500 opacity-75 mt-4 flex justify-center'
         >
-          <FontAwesomeIcon icon={faCheckCircle}
-                           size='5x'
-          />
+          <FaCheckCircle className='text-green-500 opacity-75 mt-4 flex justify-center' />
         </div>
         <div className='mt-4 flex justify-center'>
           <Link href='/'
