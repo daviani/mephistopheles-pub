@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import i18n from '../lib/i18n'
 import {FaCheckCircle} from 'react-icons/fa'
-import Loading from './main_loading'
+import Loading from './contact_loading'
 
 const initialState = {
   name: '',
