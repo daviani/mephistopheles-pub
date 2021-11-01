@@ -103,15 +103,15 @@ const NavBar = () => {
             </div>
             <div className='flex flex-row'>
               <RiFacebookCircleFill
-                className='lg:inline-block lg:mt-0 text-yellow-500 hover:text-yellow-600 ml-2 p-2 text-5xl cursor-pointer'>
+                className='lg:inline-block text-yellow-500 hover:text-yellow-600 p-2 text-5xl cursor-pointer'>
                 <Link href='https://m.facebook.com/Mephistophelespub/' passHref/>
               </RiFacebookCircleFill>
               <RiInstagramFill
-                className='lg:inline-block lg:mt-0 text-yellow-500 hover:text-yellow-600 p-2 text-5xl cursor-pointer'>
+                className='lg:inline-block text-yellow-500 hover:text-yellow-600 p-2 text-5xl cursor-pointer'>
                 <Link href='https://www.instagram.com/mephistophelespub/' passHref/>
               </RiInstagramFill>
 
-              <div className='lg:inline-block lg:mt-0 m-1 p-1 cursor-pointer'>
+              <div className='lg:inline-block p-2 cursor-pointer' >
                 <SwitchLanguage/>
               </div>
             </div>
