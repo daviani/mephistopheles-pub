@@ -1,3 +1,4 @@
+import * as React from "react";
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -5,13 +6,14 @@ import fr from '../public/images/main/flags/fr.png'
 import en from '../public/images/main/flags/en.png'
 
 const SwitchLanguage = () => {
-  const { locale, asPath } = useRouter()
+  const {locale, asPath} = useRouter()
+  const ref = React.useRef()
   return (
     <>
       <Link href={asPath}
-            passHref
             locale={locale === 'fr' ? 'en' : 'fr'}
             title='switch to english or french'
+            ref={ref}
       >
         {locale === 'fr' ? (
           <Image src={en}
