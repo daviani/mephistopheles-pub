@@ -4,6 +4,7 @@ const withFonts = require("next-fonts")
 
 module.exports = withFonts(
     {
+        swcMinify: true,
         webpack5: true,
         webpack: (config) => {
             // load worker files as a urls with `file-loader`
