@@ -31,7 +31,7 @@ const Footer = () => {
           <p> {i18n.main.hourly_2[locale]}</p>
           <br />
           <div className='hover:text-yellow-500 cursor-pointer'>
-            <Link href={telto}>
+            <Link href={telto} passHref>
               <p className="break-words">
                 {tel}
               </p>
@@ -40,8 +40,7 @@ const Footer = () => {
           <br />
           <p>{i18n.main.text_1[locale]}</p>
           <div className='hover:text-yellow-500 cursor-pointer'>
-            <Link href={mailto}
-            >
+            <Link href={mailto} passHref >
               <p className="break-words">
                 {mail}
               </p>
