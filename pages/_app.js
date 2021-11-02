@@ -15,7 +15,7 @@ function MyApp({Component, pageProps}) {
     router.events.on("routeChangeComplete", (url) => {
       setLoading(false)
     });
-  }, []);
+  }, [router.events]);
 
   return (
     <>

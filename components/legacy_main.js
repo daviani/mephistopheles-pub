@@ -6,7 +6,7 @@ const LegacyMain = () => {
   const { locale } = useRouter()
 
   const url = (
-    <Link href={i18n.main.url[locale]}>
+    <Link href={i18n.main.url[locale]} passHref>
           <span className='hover:text-yellow-500 cursor-pointer'>
             {i18n.main.url[locale]}
           </span>
