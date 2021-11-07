@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "standard",
+    "lint": "next lint",
     "export": "next build && next export"
   },
   "dependencies": {
@@ -23,7 +23,6 @@
     "react-icons": "^4.3.1",
     "react-map-gl": "^6.1.17",
     "react-pdf": "^5.4.0",
-    "standard": "^16.0.4",
     "tiny-json-http": "^7.3.0"
   },
   "devDependencies": {
