@@ -3,53 +3,53 @@ import {useRouter} from 'next/router'
 import i18n from '../lib/i18n'
 
 const Footer = () => {
-  const {locale} = useRouter()
+    const {locale} = useRouter()
 
-  const mail = i18n.main.mail[locale]
-  const mailto = 'mailto:' + mail
-  const tel = i18n.main.tel[locale]
-  const telto = 'tel:' + tel
+    const mail = i18n.main.mail[locale]
+    const mailto = 'mailto:' + mail
+    const tel = i18n.main.tel[locale]
+    const telto = 'tel:' + tel
 
-  return (
-    <>
-      <div
-        className='flex h-full bg-white bg-opacity-90 rounded-t-lg overflow-hidden mt-8'
-      >
-        <div className='w-1/2 text-center'>
-          <p className='text-base mt-12 mb-6 uppercase text-sm  break-words'>
-            {i18n.main.sub_title[locale]}
-          </p>
-          <p className='mt-2 text-yellow-500 text-5xl mb-8 bastille break-words'>
+    return (
+        <>
+            <div
+                className='flex h-full bg-white bg-opacity-90 rounded-t-lg overflow-hidden mt-8'
+            >
+                <div className='w-1/2 text-center'>
+                    <p className='text-base mt-12 mb-6 uppercase text-sm  break-words'>
+                        {i18n.main.sub_title[locale]}
+                    </p>
+                    <p className='mt-2 text-yellow-500 text-5xl mb-8 bastille break-words'>
             Mephistopheles Pub
-          </p>
-        </div>
-        <div className='w-1/2 p-4'>
-          <p>  {i18n.main.address[locale]} </p>
-          <p>  {i18n.main.zipcode[locale]}{' '} {i18n.main.city[locale]}</p>
-          <br />
-          <p> {i18n.main.hourly_1[locale]}</p>
-          <p> {i18n.main.hourly_2[locale]}</p>
-          <br />
-          <div className='hover:text-yellow-500 cursor-pointer'>
-            <Link href={telto} passHref>
-              <p className="break-words">
-                {tel}
-              </p>
-            </Link>
-          </div>
-          <br />
-          <p>{i18n.main.text_1[locale]}</p>
-          <div className='hover:text-yellow-500 cursor-pointer'>
-            <Link href={mailto} passHref >
-              <p className="break-words">
-                {mail}
-              </p>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </>
-  )
+                    </p>
+                </div>
+                <div className='w-1/2 p-4'>
+                    <p>  {i18n.main.address[locale]} </p>
+                    <p>  {i18n.main.zipcode[locale]}{' '} {i18n.main.city[locale]}</p>
+                    <br />
+                    <p> {i18n.main.hourly_1[locale]}</p>
+                    <p> {i18n.main.hourly_2[locale]}</p>
+                    <br />
+                    <div className='hover:text-yellow-500 cursor-pointer'>
+                        <Link href={telto} passHref>
+                            <p className="break-words">
+                                {tel}
+                            </p>
+                        </Link>
+                    </div>
+                    <br />
+                    <p>{i18n.main.text_1[locale]}</p>
+                    <div className='hover:text-yellow-500 cursor-pointer'>
+                        <Link href={mailto} passHref >
+                            <p className="break-words">
+                                {mail}
+                            </p>
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </>
+    )
 }
 
 export default Footer
