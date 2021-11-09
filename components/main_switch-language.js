@@ -7,13 +7,13 @@ import en from '../public/images/main/flags/en.png'
 
 const SwitchLanguage = () => {
     const {locale, asPath} = useRouter()
-    const ref = React.useRef()
+
     return (
         <>
             <Link href={asPath}
                 locale={locale === 'fr' ? 'en' : 'fr'}
                 title='switch to english or french'
-                ref={ref}
+
             >
                 {locale === 'fr' ? (
                     <Image src={en}
