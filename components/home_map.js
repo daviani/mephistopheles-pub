@@ -6,7 +6,7 @@ const Map = () => {
         width    : '100vw',
         height   : '50vh',
         latitude : 45.757033726379305,
-        longitude: 4.81551456429114,
+        longitude: 4.99,
         zoom     : 11,
     } )
 
