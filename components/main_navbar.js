@@ -102,14 +102,13 @@ const NavBar = () => {
                             </button>
                         </div>
                         <div className='flex flex-row'>
-                            <RiFacebookCircleFill
-                                className='lg:inline-block text-yellow-500 hover:text-yellow-600 p-2 text-5xl cursor-pointer'>
-                                <Link href='https://m.facebook.com/Mephistophelespub/' passHref/>
-                            </RiFacebookCircleFill>
-                            <RiInstagramFill
-                                className='lg:inline-block text-yellow-500 hover:text-yellow-600 p-2 text-5xl cursor-pointer'>
-                                <Link href='https://www.instagram.com/mephistophelespub/' passHref/>
-                            </RiInstagramFill>
+                            <Link href='https://m.facebook.com/Mephistophelespub/' passHref>
+                                <RiFacebookCircleFill    className='lg:inline-block text-yellow-500 hover:text-yellow-600 p-2 text-5xl cursor-pointer' />
+                            </Link>
+
+                            <Link href='https://www.instagram.com/mephistophelespub/' passHref >
+                                <RiInstagramFill  className='lg:inline-block text-yellow-500 hover:text-yellow-600 p-2 text-5xl cursor-pointer'/>
+                            </Link>
 
                             <div className='lg:inline-block p-2 cursor-pointer' >
                                 <SwitchLanguage/>
