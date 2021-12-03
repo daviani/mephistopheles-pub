@@ -12,7 +12,7 @@ const Map = () => {
 
     return (
         <ReactMapGL
-            mapStyle="mapbox://styles/mapbox/dark-v10"
+            mapStyle="mapbox://styles/mapbox/dark-v9"
             mapboxApiAccessToken={process.env.NEXT_PUBLIC_MAPBOX_KEY}
             {...viewport}
             onViewportChange={(nextViewport) => setViewport(nextViewport)}
