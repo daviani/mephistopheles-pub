@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-const withFonts = require("next-fonts")
+const withFonts = require('next-fonts')
 
 module.exports = withFonts(
     {
@@ -23,6 +23,9 @@ module.exports = withFonts(
                 ],
             })
             return config
+        },
+        images: {
+            formats: ['image/avif', 'image/webp'],
         },
         i18n: {
             locales: ['fr', 'en'],
