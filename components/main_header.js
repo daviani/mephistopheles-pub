@@ -1,5 +1,5 @@
 import i18n from '../lib/i18n'
-import { useRouter } from 'next/router' 
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 const HeaderBand = () => {
@@ -20,7 +20,7 @@ const HeaderBand = () => {
             </div>
             <div className='w-full m-0 p-0 bg-cover bg-bottom headerBackground '>
                 <div
-                    className='container max-w-4xl mx-auto pt-16 md:pt-32 text-center break-normal'
+                    className='container max-w-4xl mx-auto pt-16 sm:pt-12 text-center break-normal'
                 >
                     <h1 className='mt-10 sm:mt-15 text-white font-extrabold mb-8 text-5xl bastille'>
                         <Link href='/'
