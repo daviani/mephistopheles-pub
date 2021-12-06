@@ -11,7 +11,7 @@ export default function Contact () {
                 content='Mephistopheles pub - Contact'
             />
             <link rel='icon'
-                href='../../public/images/icon.ico'
+                href='../../public/images/favicon.ico'
             />
         </Head>
         <TopComponent>

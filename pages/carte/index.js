@@ -51,7 +51,7 @@ export default function Carte ({subscription}) {
                     content='Mephistopheles pub - Carte'
                 />
                 <link rel='icon'
-                    href='../../public/images/icon.ico'
+                    href='../../public/images/favicon.ico'
                 />
                 <link
                     href='https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css'
