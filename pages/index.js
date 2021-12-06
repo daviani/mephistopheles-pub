@@ -23,10 +23,10 @@ export async function getStaticProps ({ preview, locale }) {
                 illustration {
                     responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
                     ...responsiveImageFragment
+                    }
                 }
-            }
-            title
-            describe
+                title
+                describe
         }
     }
     ${responsiveImageFragment}
