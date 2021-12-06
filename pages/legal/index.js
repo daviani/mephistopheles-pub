@@ -12,9 +12,7 @@ export default function Carte () {
                 <meta name='description'
                     content='Mephistopheles pub - Legal'
                 />
-                <link rel='icon'
-                    href='../../public/images/favicon.ico'
-                />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
 
 

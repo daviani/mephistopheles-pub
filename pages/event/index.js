@@ -55,9 +55,7 @@ export default function Event ({ subscription }) {
             <meta name='description'
                 content='Mephistopheles pub - Event'
             />
-            <link rel='icon'
-                href='../../public/images/favicon.ico'
-            />
+            <link rel="icon" href="/favicon.ico" />
         </Head>
 
         {allEvents.length > 0 && (

@@ -10,9 +10,7 @@ export default function Contact () {
             <meta name='description'
                 content='Mephistopheles pub - Contact'
             />
-            <link rel='icon'
-                href='../../public/images/favicon.ico'
-            />
+            <link rel="icon" href="/favicon.ico" />
         </Head>
         <TopComponent>
             <ContactForm />

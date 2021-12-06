@@ -52,9 +52,7 @@ export default function Media ({ subscription }) {
                 <meta name='description'
                     content='Mephistopheles pub - Media'
                 />
-                <link rel='icon'
-                    href='../../public/images/favicon.ico'
-                />
+                <link rel="icon" href="/favicon.ico" />
             </Head>
 
             <TopComponent>
