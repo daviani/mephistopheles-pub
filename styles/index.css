@@ -25,8 +25,7 @@ a {
 }
 
 .headerBackground {
-    background-image: url('../public/images/header/Header-background.webp');
-    background-position: center;
+    background-color: black;
     height: 60vh;
     max-height: 460px;
 }
