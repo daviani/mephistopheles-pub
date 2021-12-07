@@ -32,7 +32,7 @@ a {
 
 .bodyBackground {
     background-attachment: fixed;
-    background-image: url('../public/images/main/mainBackground.webp');
+    background-image: url('../public/images/header/mainBackground.webp');
 }
 
 .cardBackground {
