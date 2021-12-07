@@ -22,14 +22,14 @@ const HeaderBand = () => {
                 <div
                     className='container max-w-4xl mx-auto pt-16 sm:pt-12 text-center break-normal'
                 >
-                    <h1 className='mt-10 sm:mt-15 text-white font-extrabold mb-8 text-5xl bastille'>
+                    <h1 className='mt-10 sm:mt-16 text-white font-extrabold mb-8 text-5xl sm:text-7xl bastille tracking-wider'>
                         <Link href='/'
                             passHref
                         >
                             {i18n.main.title[locale]}
                         </Link>
                     </h1>
-                    <h2 className=' md:text-2xl text-base text-white uppercase'>
+                    <h2 className='text-base md:text-xl text-white uppercase'>
                         {i18n.main.sub_title[locale]}
                     </h2>
                 </div>
