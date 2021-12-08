@@ -3,20 +3,19 @@ import Head from 'next/head'
 import TopComponent from '../../components/main_top-component'
 import MiddleComponent from '../../components/main_middle-component'
 import Carousel from '../../components/media_carousel-main'
-import Gallery from '../../components/media_gallery'
+// import Gallery from '../../components/media_gallery'
 import { request } from '../../lib/datocms'
 import { useQuerySubscription } from 'react-datocms'
-import Articles from '../../components/media_articles'
+// import Articles from '../../components/media_articles'
 
-export async function getStaticProps ({ preview, locale }) {
-    const formattedLocale = locale.split('-')[0]
+export async function getStaticProps ({ preview }) {
+    // const formattedLocale = locale.split('-')[0]
 
     const graphqlRequest = {
         query: `{
-            carousel {
-                picturesItems {
-                    id
-                    alt
+            allCarousels(orderBy: _createdAt_DESC) {
+                id
+                item {
                     responsiveImage(imgixParams: {fit: crop, w: 1280, h: 700, auto: format}) {
                         srcSet
                         webpSrcSet
@@ -25,20 +24,11 @@ export async function getStaticProps ({ preview, locale }) {
                         width
                         height
                         aspectRatio
-                        alt
+                        alt 
                         title
                         base64
                     }
                 }
-            }
-            allArticles(locale: ${formattedLocale}) {
-                id
-                date
-                textToLink
-                title
-                urlToArticles
-                authorName
-                articleDescribe
             }
         }`,
         preview
@@ -61,7 +51,8 @@ export async function getStaticProps ({ preview, locale }) {
 }
 
 export default function Media ({ subscription }) {
-    const { data: { carousel, allArticles } } = useQuerySubscription(subscription)
+    const { data: { allCarousels } } = useQuerySubscription(subscription)
+    console.log(allCarousels)
     return (
         <Layout>
             <Head>
@@ -77,18 +68,18 @@ export default function Media ({ subscription }) {
             </Head>
 
             <TopComponent>
-                {carousel.picturesItems.length > 0 && (
-                    <Carousel items={carousel.picturesItems}/>
+                {allCarousels.length > 0 && (
+                    <Carousel items={allCarousels}/>
                 )}
             </TopComponent>
 
             <MiddleComponent>
-                <Gallery/>
+                {/*<Gallery/>*/}
             </MiddleComponent>
 
-            {allArticles.length > 0 && (
-                <Articles allArticles={allArticles}/>
-            )}
+            {/*{allArticles.length > 0 && (*/}
+            {/*    <Articles allArticles={allArticles}/>*/}
+            {/*)}*/}
 
         </Layout>
     )

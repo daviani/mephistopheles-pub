@@ -9,16 +9,16 @@ const Carousel = (items) => {
             marginRight: 'auto'
         }}
         >
-
             <CarouselButtons show={1} infiniteLoop={true}>
                 {items.items.map((item) => (
                     < Image
                         key={item.id}
-                        src={item.responsiveImage}
-                        alt={item.responsiveImage.alt}
+                        src={item.item.responsiveImage}
+                        alt={item.item.responsiveImage.alt}
                         width={1280}
                         height={800}
-                    />)
+                    />
+                )
                 )}
             </CarouselButtons>
         </div>
