@@ -52,7 +52,6 @@ export async function getStaticProps ({ preview }) {
 
 export default function Media ({ subscription }) {
     const { data: { allCarousels } } = useQuerySubscription(subscription)
-    console.log(allCarousels)
     return (
         <Layout>
             <Head>
