@@ -12,7 +12,7 @@ const HeaderBand = () => {
                     <div />
                     <div className='mt-1 text-center uppercase text-white font-extrabold text-xs md:text-base'>
                         <p>
-                            {i18n.main.address[locale]}{' | '}{i18n.main.hourly_1[locale]}{' - '}{i18n.main.hourly_2[locale]}
+                            {i18n.main.address[locale]}{' | '}{i18n.main.city[locale]}{' '}{i18n.main.zipcode[locale]}
                         </p>
                     </div>
                     <div />
