@@ -10,12 +10,12 @@ import { useQuerySubscription } from 'react-datocms'
 
 export async function getStaticProps ({ preview }) {
     // const formattedLocale = locale.split('-')[0]
-
     const graphqlRequest = {
         query: `{
-            allCarousels(orderBy: _createdAt_DESC) {
+            allCarousels(orderBy: _createdAt_ASC) {
                 id
                 item {
+                    alt 
                     responsiveImage(imgixParams: {fit: crop, w: 1280, h: 700, auto: format}) {
                         srcSet
                         webpSrcSet
@@ -24,7 +24,23 @@ export async function getStaticProps ({ preview }) {
                         width
                         height
                         aspectRatio
-                        alt 
+                        title
+                        base64
+                    }
+                }
+            }
+             allGalleries(orderBy: _createdAt_ASC) {
+                id
+                item {
+                    alt
+                    responsiveImage(imgixParams: {fit: crop, w: 1000, h: 600, auto: format}) {
+                        srcSet
+                        webpSrcSet
+                        sizes
+                        src
+                        width
+                        height
+                        aspectRatio
                         title
                         base64
                     }
