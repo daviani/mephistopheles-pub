@@ -18,16 +18,19 @@ const Footer = () => {
                     {i18n.main.sub_title[locale]}
                 </p>
                 <p className="mt-2 text-yellow-500 text-5xl mb-8 bastille break-words">
-                    Mephistopheles Pub
+                    {i18n.main.title[locale]}
                 </p>
             </div>
-            <div className="w-full md:w-1/2 p-4 text-center md:text-left">
-                <p>  {i18n.main.address[locale]} </p>
-                <p>  {i18n.main.zipcode[locale]}{' '} {i18n.main.city[locale]}</p>
-                <br/>
+            <div className="w-full md:w-1/2 p-4 text-center">
                 <p> {i18n.main.hourly_1[locale]}</p>
                 <p> {i18n.main.hourly_2[locale]}</p>
+                <p> {i18n.main.hourly_3[locale]}</p>
+                <p> {i18n.main.hourly_4[locale]}</p>
+                <p> {i18n.main.hourly_5[locale]}</p>
+                <p> {i18n.main.hourly_6[locale]}</p>
+
                 <br/>
+                <p>{i18n.main.text_1[locale]}</p>
                 <div className="hover:text-yellow-500 cursor-pointer">
                     <Link href={telto} passHref>
                         <p className="break-words">
@@ -35,8 +38,6 @@ const Footer = () => {
                         </p>
                     </Link>
                 </div>
-                <br/>
-                <p>{i18n.main.text_1[locale]}</p>
                 <div className="hover:text-yellow-500 cursor-pointer">
                     <Link href={mailto} passHref>
                         <p className="break-words">
