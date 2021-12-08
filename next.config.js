@@ -24,6 +24,7 @@ module.exports = withFonts(
             return config
         },
         images: {
+            domains: ['www.datocms-assets.com'],
             formats: ['image/avif', 'image/webp'],
         },
         i18n: {
