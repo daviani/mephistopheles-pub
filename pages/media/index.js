@@ -3,13 +3,13 @@ import Head from 'next/head'
 import TopComponent from '../../components/main_top-component'
 import MiddleComponent from '../../components/main_middle-component'
 import Carousel from '../../components/media_carousel-main'
-// import Gallery from '../../components/media_gallery'
+import Gallery from '../../components/media_gallery'
+import Articles from '../../components/media_articles'
 import { request } from '../../lib/datocms'
 import { useQuerySubscription } from 'react-datocms'
-// import Articles from '../../components/media_articles'
 
-export async function getStaticProps ({ preview }) {
-    // const formattedLocale = locale.split('-')[0]
+export async function getStaticProps ({ preview, locale }) {
+    const formattedLocale = locale.split('-')[0]
     const graphqlRequest = {
         query: `{
             allCarousels(orderBy: _createdAt_ASC) {
@@ -46,6 +46,15 @@ export async function getStaticProps ({ preview }) {
                     }
                 }
             }
+            allArticles(locale: ${formattedLocale}) {
+                id
+                date
+                textToLink
+                title
+                urlToArticles
+                authorName
+                articleDescribe
+            }
         }`,
         preview
     }
@@ -67,7 +76,7 @@ export async function getStaticProps ({ preview }) {
 }
 
 export default function Media ({ subscription }) {
-    const { data: { allCarousels } } = useQuerySubscription(subscription)
+    const { data: { allCarousels, allGalleries, allArticles } } = useQuerySubscription(subscription)
     return (
         <Layout>
             <Head>
@@ -89,12 +98,14 @@ export default function Media ({ subscription }) {
             </TopComponent>
 
             <MiddleComponent>
-                {/*<Gallery/>*/}
+                {allGalleries.length === 6 && (
+                    <Gallery items={allGalleries}/>
+                )}
             </MiddleComponent>
 
-            {/*{allArticles.length > 0 && (*/}
-            {/*    <Articles allArticles={allArticles}/>*/}
-            {/*)}*/}
+            {allArticles.length > 0 && (
+                <Articles allArticles={allArticles}/>
+            )}
 
         </Layout>
     )
