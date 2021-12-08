@@ -13,7 +13,25 @@ export async function getStaticProps ({ preview, locale }) {
 
     const graphqlRequest = {
         query: `{
-            allArticles(locale: ${formattedLocale})  {
+            carousel {
+                picturesItems {
+                    id
+                    alt
+                    responsiveImage(imgixParams: {fit: crop, w: 1280, h: 700, auto: format}) {
+                        srcSet
+                        webpSrcSet
+                        sizes
+                        src
+                        width
+                        height
+                        aspectRatio
+                        alt
+                        title
+                        base64
+                    }
+                }
+            }
+            allArticles(locale: ${formattedLocale}) {
                 id
                 date
                 textToLink
@@ -43,8 +61,7 @@ export async function getStaticProps ({ preview, locale }) {
 }
 
 export default function Media ({ subscription }) {
-    const { data: { allArticles } } = useQuerySubscription(subscription)
-
+    const { data: { carousel, allArticles } } = useQuerySubscription(subscription)
     return (
         <Layout>
             <Head>
@@ -60,7 +77,9 @@ export default function Media ({ subscription }) {
             </Head>
 
             <TopComponent>
-                <Carousel/>
+                {carousel.picturesItems.length > 0 && (
+                    <Carousel items={carousel.picturesItems}/>
+                )}
             </TopComponent>
 
             <MiddleComponent>
