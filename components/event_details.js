@@ -1,4 +1,5 @@
 const EventDetail = ({ event }) => {
+    
     return (
         <div className='flex flex-col '>
             <div className='w-full h-64 bg-top bg-cover rounded-t'
@@ -18,7 +19,7 @@ const EventDetail = ({ event }) => {
                         {event.title}
                     </h5>
                     <p className='leading-normal'>
-                        {event.description}
+                        {/*{event.description}*/}
                     </p>
                     <div
                         className='flex flex-row items-center mt-4 text-gray-700'

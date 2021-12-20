@@ -17,7 +17,7 @@ export async function getStaticProps ({ preview, locale }) {
                 }
             }
             title
-            description
+
             subDescription
             frequency
             day
@@ -48,6 +48,8 @@ export async function getStaticProps ({ preview, locale }) {
 
 export default function Event ({ subscription }) {
     const { data: { allEvents } } = useQuerySubscription(subscription)
+    
+    console.log(allEvents)
 
     return (
         <Layout> <Head>
