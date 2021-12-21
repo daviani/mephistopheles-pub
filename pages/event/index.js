@@ -10,19 +10,22 @@ export async function getStaticProps ({ preview, locale }) {
     const graphqlRequest = {
         query: `{
             allEvents(locale: ${formattedLocale}) {
-                id
+            id
                 illustration {
                     responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
                     ...responsiveImageFragment
                 }
             }
             title
-
-            subDescription
+            description {
+                value
+            }
             frequency
             day
             frequencyHour
             hour
+            titreDuBouton
+            lienDeLEvenement
         }
     }
     ${responsiveImageFragment}
@@ -48,9 +51,6 @@ export async function getStaticProps ({ preview, locale }) {
 
 export default function Event ({ subscription }) {
     const { data: { allEvents } } = useQuerySubscription(subscription)
-    
-    console.log(allEvents)
-
     return (
         <Layout> <Head>
             <title>Mephistopheles pub - Event</title>
