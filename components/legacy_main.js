@@ -78,18 +78,18 @@ const LegacyMain = () => {
                 <strong>
                     {i18n.legacy.paragraph_16[locale]}
                 </strong>
-                <span className='text-red-500'>
+                <span >
                     {i18n.legacy.legal_form[locale]}
                 </span>
                 {' '}
                 {i18n.main.secondary_title[locale]}{' '}
                 {i18n.legacy.paragraph_17[locale]}{' '}
-                <span className='text-red-500'>
+                <span >
                     {i18n.legacy.share_capital[locale]}
                 </span>
                 {' €'}
                 {i18n.legacy.paragraph_18[locale]}{' '}
-                <span className='text-red-500'>
+                <span >
                     {i18n.legacy.intra_Community_VAT_number[locale]}
                 </span>
                 {' - '}
@@ -99,11 +99,11 @@ const LegacyMain = () => {
                 <strong>
                     {i18n.legacy.paragraph_19[locale]}
                 </strong>
-                <span className='text-red-500'>
+                <span >
                     {i18n.legacy.name_of_the_person_responsible_for_the_publication[locale]}
                 </span>
                 {' - '}
-                <span className='text-red-500'>
+                <span >
                     {i18n.legacy.contact_of_the_person_responsible_for_the_publication[locale]}
                 </span>
             </p>
@@ -126,7 +126,7 @@ const LegacyMain = () => {
                 <strong>
                     {i18n.legacy.paragraph_23[locale]}
                 </strong>
-                <span className='text-red-500'>
+                <span >
                     {i18n.legacy.name_of_the_data_protection_officer[locale]}
                 </span>
 
@@ -203,7 +203,7 @@ const LegacyMain = () => {
             <p className='ml-16 mr-8 text-sm'>
                 {i18n.legacy.paragraph_52[locale]} {url}
                 {i18n.legacy.paragraph_53[locale]}
-                <span className='text-red-500'>
+                <span >
                     {i18n.legacy.name_of_the_legal_representative_of_the_company[locale]}
                 </span>
                 {i18n.legacy.paragraph_54[locale]}
@@ -286,7 +286,7 @@ const LegacyMain = () => {
             </p>
             <p className='ml-16 mr-8 text-sm mt-2 text-xs'>
                 {i18n.main.secondary_title[locale]} {' – DPO, '}
-                <span className='text-red-500'>
+                <span >
                     {i18n.legacy.name_of_the_data_protection_officer[locale]}
                 </span>
                 <br />
@@ -417,7 +417,7 @@ const LegacyMain = () => {
                 {i18n.legacy.paragraph_136[locale]} {url}
                 {i18n.legacy.paragraph_137[locale]}
 
-                <span className='text-red-500'>
+                <span >
                     {i18n.legacy.city_of_the_court_of_jurisdiction_in_case_of_a_dispute[locale]}
                 </span>
             </p>
