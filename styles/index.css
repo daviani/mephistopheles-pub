@@ -3,8 +3,17 @@
     src: url('/fonts/bastille.ttf');
 }
 
+@font-face {
+    font-family: 'coquette';
+    src: url('/fonts/coquette.ttf');
+}
+
 .bastille {
     font-family: bastille, serif;
+}
+
+.coquette {
+    font-family: coquette, serif;
 }
 
 html,
@@ -25,7 +34,7 @@ a {
 }
 
 .headerBackground {
-    background-color: black;
+    background-color: #522526;
     height: 60vh;
     max-height: 460px;
 }
