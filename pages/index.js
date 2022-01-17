@@ -4,7 +4,6 @@ import TopComponent from '../components/main_top-component'
 import About from '../components/home_about'
 import MiddleComponent from '../components/main_middle-component'
 import CardsCocktail from '../components/home_cocktails-cards'
-import CartesCard from '../components/home_cartes-card'
 import Map from '../components/home_import-map'
 
 import { responsiveImageFragment } from '../lib/fragments'
@@ -78,9 +77,9 @@ export default function Home ({ subscription }) {
                 </MiddleComponent>
             )}
 
-            <MiddleComponent>
-                <CartesCard />
-            </MiddleComponent>
+            {/*<MiddleComponent>*/}
+            {/*    <CartesCard />*/}
+            {/*</MiddleComponent>*/}
 
             <MiddleComponent>
                 <Map />
