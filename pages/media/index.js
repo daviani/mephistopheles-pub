@@ -15,7 +15,7 @@ export async function getStaticProps ({ preview, locale }) {
             allCarousels(orderBy: _createdAt_ASC) {
                 id
                 item {
-                    alt 
+                    alt
                     responsiveImage(imgixParams: {fit: crop, w: 1280, h: 700, auto: format}) {
                         srcSet
                         webpSrcSet
@@ -80,14 +80,15 @@ export default function Media ({ subscription }) {
     return (
         <Layout>
             <Head>
+                <meta charSet='utf8' lang='fr, en'/>
+                <meta name='robots' content='index, follow' />
                 <title>Mephistopheles pub - Media</title>
-                <meta name='description'
+                <meta name='og:description'
                     content='Mephistopheles pub - Media'
                 />
-                <meta name='robots' content='index, follow' />
                 <meta property='og:url' content='https://mephistopheles-pub.fr//' />
                 <meta property='og:title' content='Site officiel du Mephistopheles pub - Lyon 5' />
-                <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 

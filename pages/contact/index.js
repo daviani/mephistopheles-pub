@@ -5,21 +5,23 @@ import TopComponent from '../../components/main_top-component'
 
 export default function Contact () {
     return (
-        <Layout> <Head>
-            <title>Mephistopheles pub - Contact</title>
-            <meta name='description'
-                content='Mephistopheles pub - Contact'
-            />
-            <meta name='robots' content='index, follow' />
-            <meta property='og:url' content='https://mephistopheles-pub.fr//' />
-            <meta property='og:title' content='Site officiel du Mephistopheles pub - Lyon 5' />
-            <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <TopComponent>
-            <ContactForm />
-        </TopComponent>
-
+        <Layout>
+            <Head>
+                <meta charSet='utf8'/>
+                <title>Mephistopheles pub - Contact</title>
+                <meta name="description"
+                    content="Mephistopheles pub - Contact"
+                />
+                <meta name="robots" content="index, follow"/>
+                <meta property="og:url" content="https://mephistopheles-pub.fr//"/>
+                <meta property="og:title" content="Site officiel du Mephistopheles pub - Lyon 5"/>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
+                <link rel="icon" href="/favicon.ico"/>
+            </Head>
+            <TopComponent>
+                <ContactForm/>
+            </TopComponent>
+        
         </Layout>
     )
 }
