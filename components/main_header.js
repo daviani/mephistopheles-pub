@@ -22,7 +22,7 @@ const HeaderBand = () => {
                 <div
                     className='container max-w-4xl mx-auto pt-16 sm:pt-12 text-center break-normal'
                 >
-                    <h1 className='mt-10 sm:mt-16 text-yellow-500 font-extrabold mb-8 text-5xl sm:text-7xl bastille tracking-wider '>
+                    <h1 className='mt-10 sm:mt-16 font-medium text-yellow-500 mb-8 text-5xl sm:text-7xl bastille tracking-wider '>
                         <Link href='/'
                             passHref
                         >
@@ -32,6 +32,11 @@ const HeaderBand = () => {
                     <h2 className='text-base md:text-xl text-white coquette'>
                         {i18n.main.sub_title[locale]}
                     </h2>
+                    <Link href='/carte' passHref prefetch>
+                        <div className='ml-auto mr-auto mt-5 p-2.5 rounded-xl font-medium text-white border-2 border-white w-24 cursor-pointer'>
+                            {i18n.main.card_title[locale]}
+                        </div>
+                    </Link>
                 </div>
             </div>
         </>
