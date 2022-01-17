@@ -15,7 +15,7 @@ export default function PDFViewer ({ allCartes }) {
         <>
             {allCartes &&
                 allCartes.map((carte) =>
-                    <div key={carte.id}>
+                    <div key={carte.id} className='m-5'>
                         <h3 className="text-center text-yellow-500 text-5xl m-8 bastille ">
                             {carte.titre}
                         </h3>
