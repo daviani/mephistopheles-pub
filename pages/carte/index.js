@@ -4,11 +4,21 @@ import TopComponent from '../../components/main_top-component'
 import dynamic from 'next/dynamic'
 import { request } from '../../lib/datocms'
 import { useQuerySubscription } from 'react-datocms'
+import DishOfDay from '../../components/main_dish-of-day'
+import MiddleComponent from '../../components/main_middle-component'
 
 export async function getStaticProps ({ preview, locale}) {
     const formattedLocale = locale.split('-')[0]
     const graphqlRequest = {
         query: `{
+        allDishOfDays(locale: ${formattedLocale}) {
+            entry1
+            entry2
+            dish1
+            dish2
+            desserts1
+            desserts2
+        }
         allCartes(locale: ${formattedLocale}, orderBy: _createdAt_ASC) {
             id
             titre
@@ -41,7 +51,7 @@ const PDFViewer = dynamic(() => import('../../components/carte_pdf-viewer'), {
 })
 
 export default function Carte ({subscription}) {
-    const { data: { allCartes } } = useQuerySubscription(subscription)
+    const { data: { allCartes, allDishOfDays } } = useQuerySubscription(subscription)
 
     return (
         <Layout>
@@ -64,6 +74,12 @@ export default function Carte ({subscription}) {
             <TopComponent>
                 <PDFViewer allCartes={allCartes} />
             </TopComponent>
+    
+            {allDishOfDays.length === 1 &&
+                <MiddleComponent>
+                    <DishOfDay/>
+                </MiddleComponent>
+            }
         </Layout>
     )
 }

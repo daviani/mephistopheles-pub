@@ -4,6 +4,9 @@ import Link from 'next/link'
 
 const HeaderBand = () => {
     const { locale } = useRouter()
+    const params = useRouter()
+    console.log(params.pathname)
+
 
     return (
         <>
@@ -32,11 +35,13 @@ const HeaderBand = () => {
                     <h2 className='text-base md:text-xl text-white coquette'>
                         {i18n.main.sub_title[locale]}
                     </h2>
-                    <Link href='/carte' passHref prefetch>
-                        <div className='ml-auto mr-auto mt-5 p-2.5 rounded-xl font-medium text-white border-2 border-white w-24 cursor-pointer'>
-                            {i18n.main.card_title[locale]}
-                        </div>
-                    </Link>
+                    {params.pathname !== '/carte' &&
+                        <Link href='/carte' passHref prefetch>
+                            <div className='ml-auto mr-auto mt-5 p-2.5 rounded-xl font-medium text-white border-2 border-white w-40 cursor-pointer'>
+                                {i18n.main.button_card[locale]}
+                            </div>
+                        </Link>
+                    }
                 </div>
             </div>
         </>
