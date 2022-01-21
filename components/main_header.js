@@ -5,8 +5,6 @@ import Link from 'next/link'
 const HeaderBand = () => {
     const { locale } = useRouter()
     const params = useRouter()
-    console.log(params.pathname)
-
 
     return (
         <>

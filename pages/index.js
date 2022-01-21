@@ -9,11 +9,20 @@ import Map from '../components/home_import-map'
 import { responsiveImageFragment } from '../lib/fragments'
 import { request } from '../lib/datocms'
 import { useQuerySubscription } from 'react-datocms'
+import DailySpecial from '../components/main_daily-special'
 
 export async function getStaticProps ({ preview, locale }) {
     const formattedLocale = locale.split('-')[0]
     const graphqlRequest = {
         query: `{
+            dailySpecial {
+                entry1
+                entry2
+                dish1
+                dish2
+                dessert1
+                dessert2
+            }
             allCocktails(locale: ${formattedLocale}) {
                 id
                 illustration {
@@ -47,43 +56,73 @@ export async function getStaticProps ({ preview, locale }) {
 }
 
 export default function Home ({ subscription }) {
-    const { data: { allCocktails } } = useQuerySubscription(subscription)
+    const { data: { allCocktails, dailySpecial } } = useQuerySubscription(subscription)
+
     return (
         <Layout>
             <Head>
-                <meta charSet='utf8'/>
+                <meta charSet="utf8"/>
                 <title>Mephistopheles pub - Accueil</title>
-                <meta name='description'
-                    content='Mephistopheles pub - Accueil'
+                <meta name="description"
+                    content="Mephistopheles pub - Accueil"
                 />
-                <meta name='robots' content='index, follow' />
-                <meta property='og:url' content='https://mephistopheles-pub.fr//' />
-                <meta property='og:title' content='Site officiel du Mephistopheles pub - Lyon 5' />
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport" />
-                <link rel="icon" href="/favicon.ico" />
+                <meta name="robots" content="index, follow"/>
+                <meta property="og:url" content="https://mephistopheles-pub.fr//"/>
+                <meta property="og:title" content="Site officiel du Mephistopheles pub - Lyon 5"/>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" key="viewport"/>
+                <link rel="icon" href="/favicon.ico"/>
                 <link
                     href="https://api.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css"
                     rel="stylesheet"
                 />
             </Head>
-            <TopComponent>
-                <About />
-            </TopComponent>
 
-
-            {allCocktails.length > 0 && (
-                <MiddleComponent>
-                    <CardsCocktail allCocktails={allCocktails} />
-                </MiddleComponent>
-            )}
-
-            {/*<MiddleComponent>*/}
-            {/*    <CartesCard />*/}
-            {/*</MiddleComponent>*/}
-
-            <MiddleComponent>
-                <Map />
-            </MiddleComponent>
+            {dailySpecial
+                ?
+                <>
+                    <TopComponent>
+                        <DailySpecial dailySpecial={dailySpecial} />
+                    </TopComponent>
+                    
+                    <MiddleComponent>
+                        <About/>
+                    </MiddleComponent>
+                    
+                    {allCocktails.length > 0 && (
+                        <MiddleComponent>
+                            <CardsCocktail allCocktails={allCocktails}/>
+                        </MiddleComponent>
+                    )}
+    
+                    {/*<MiddleComponent>*/}
+                    {/*    <CartesCard />*/}
+                    {/*</MiddleComponent>*/}
+    
+                    <MiddleComponent>
+                        <Map/>
+                    </MiddleComponent>
+                </>
+                :
+                <>
+                    <TopComponent>
+                        <About/>
+                    </TopComponent>
+                    
+                    {allCocktails.length > 0 && (
+                        <MiddleComponent>
+                            <CardsCocktail allCocktails={allCocktails}/>
+                        </MiddleComponent>
+                    )}
+                    
+                    {/*<MiddleComponent>*/}
+                    {/*    <CartesCard />*/}
+                    {/*</MiddleComponent>*/}
+                    
+                    <MiddleComponent>
+                        <Map/>
+                    </MiddleComponent>
+                </>
+            }
         </Layout>
     )
 }

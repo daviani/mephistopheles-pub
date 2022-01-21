@@ -14,7 +14,7 @@ const Footer = () => {
             className="flex flex-col md:flex-row h-full bg-white bg-opacity-90 rounded-t-lg overflow-hidden mt-8"
         >
             <div className="w-full md:w-1/2 text-center">
-                <p className="text-base mt-12 mb-6 uppercase text-sm break-words">
+                <p className="text-base mt-12 mb-6 break-words coquette">
                     {i18n.main.sub_title[locale]}
                 </p>
                 <p className="mt-2 text-yellow-500 text-5xl mb-8 bastille break-words">
