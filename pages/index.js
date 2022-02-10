@@ -9,19 +9,24 @@ import Map from '../components/home_import-map'
 import { responsiveImageFragment } from '../lib/fragments'
 import { request } from '../lib/datocms'
 import { useQuerySubscription } from 'react-datocms'
-import DailySpecial from '../components/main_daily-special'
+import WeekSpecial from '../components/main_weekily-special'
 
 export async function getStaticProps ({ preview, locale }) {
     const formattedLocale = locale.split('-')[0]
     const graphqlRequest = {
         query: `{
-            dailySpecial {
+            weekSpecial {
+                mainTitle
+                subTitle
                 entry1
                 entry2
+                entry3
                 dish1
                 dish2
+                dish3
                 dessert1
                 dessert2
+                dessert3
             }
             allCocktails(locale: ${formattedLocale}) {
                 id
@@ -56,8 +61,8 @@ export async function getStaticProps ({ preview, locale }) {
 }
 
 export default function Home ({ subscription }) {
-    const { data: { allCocktails, dailySpecial } } = useQuerySubscription(subscription)
-
+    const { data: { allCocktails, weekSpecial } } = useQuerySubscription(subscription)
+    
     return (
         <Layout>
             <Head>
@@ -77,11 +82,14 @@ export default function Home ({ subscription }) {
                 />
             </Head>
 
-            {dailySpecial
+            
+            
+            
+            {weekSpecial
                 ?
                 <>
                     <TopComponent>
-                        <DailySpecial dailySpecial={dailySpecial} />
+                        <WeekSpecial weekSpecial={weekSpecial} />
                     </TopComponent>
                     
                     <MiddleComponent>
