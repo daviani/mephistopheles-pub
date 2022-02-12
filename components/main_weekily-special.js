@@ -6,7 +6,7 @@ const WeekSpecial = ({ weekSpecial } ) => {
     
     return (
         <div className="rounded overflow-hidden text-center p-5">
-            <h3 className="text-center text-yellow-500 text-5xl m-8 coquette">
+            <h3 className="text-center text-yellow-500 text-5xl m-8 bastille">
                 { weekSpecial.mainTitle}
             </h3>
             <p className='text-sm'>

@@ -81,9 +81,6 @@ export default function Home ({ subscription }) {
                     rel="stylesheet"
                 />
             </Head>
-
-            
-            
             
             {weekSpecial
                 ?
