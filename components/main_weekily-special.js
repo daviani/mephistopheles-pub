@@ -55,7 +55,7 @@ const WeekSpecial = ({ weekSpecial }) => {
                         {i18n.cards.ou[locale]}
                     </p>
                     <p className="text-yellow-500 coquette ">
-                        {weekSpecial.entry3}
+                        {weekSpecial.dish3}
                     </p>
                 </>
             }
@@ -77,7 +77,7 @@ const WeekSpecial = ({ weekSpecial }) => {
                         {i18n.cards.ou[locale]}
                     </p>
                     <p className="text-yellow-500 coquette ">
-                        {weekSpecial.entry3}
+                        {weekSpecial.dessert3}
                     </p>
                 </>
             }
